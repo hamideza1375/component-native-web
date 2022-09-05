@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
-import { Keyboard, KeyboardAvoidingView, ActivityIndicator, SafeAreaView, Pressable, View, Text, TextInput, Image, StyleSheet, ScrollView, Dimensions, Animated } from 'react-native'
+import { KeyboardAvoidingView, Pressable, View, Text, TextInput, Image, StyleSheet, ScrollView, Dimensions, Animated } from 'react-native'
 import Input from './Input'
 import Button from './Button'
 import {CheckBox} from './Html'
@@ -8,6 +8,7 @@ import {Yub} from './yub'
 import Icon from '@expo/vector-icons/FontAwesome';
 import Icon5 from '@expo/vector-icons/FontAwesome5';
 import { launchImageLibraryAsync as launchImageLibrary } from "expo-image-picker";
+import { useFocusEffect } from '@react-navigation/native'
 const newObj = new Proxy({}, Yub);
 
 
@@ -98,9 +99,9 @@ const Form = ({ f, e, p, cp, m, ch, c, t, pr, im, i, edit, s, gc,ph,
 
 
 
-  useEffect(() => {
+  useFocusEffect(useCallback(() => {
     changeRand && setRand(parseInt(Math.random() * 9000 + 1000))
-  }, [show2])
+  }, [show2]))
 
 
 
@@ -506,7 +507,7 @@ const Form = ({ f, e, p, cp, m, ch, c, t, pr, im, i, edit, s, gc,ph,
   return (
     
     // <ChangeView style={[{height: '100%',minWidth:'100%'}]}>
-    <View style={{backgroundColor:'#f0f0f0', minWidth:'100%'}} >
+    <ScrollView style={{backgroundColor:'#f0f0f0', minWidth:'100%', flexGrow:1}} >
 
     <View style={[styles.viewContainer,{paddingTop:top},style]} >
     
@@ -1148,7 +1149,7 @@ const Form = ({ f, e, p, cp, m, ch, c, t, pr, im, i, edit, s, gc,ph,
 
       </View>
       </View>
-    </View>
+    </ScrollView>
   )
 
 }

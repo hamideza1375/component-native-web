@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Animated, LayoutAnimation, StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { Animated, StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import Icon from '@expo/vector-icons/FontAwesome';
 export default function App({ onPress, style, header, body, color, bgcolor, icon, icon2, size }) {
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Pressable } from "react-native";
 import Icon from '@expo/vector-icons/FontAwesome5';
 

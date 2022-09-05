@@ -46,6 +46,7 @@ function Button(prop) {
       </TouchableOpacity>
       :
       <TouchableOpacity
+      {...prop}
         style={[
           styles.textOutline
           , bgcolor == 'white' ? { borderWidth: 1 } :

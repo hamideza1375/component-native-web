@@ -1,7 +1,7 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { ActivityIndicator, View, TextInput } from "react-native";
 import Icon from '@expo/vector-icons/FontAwesome5';
-// import { useFocusEffect } from '@react-navigation/native';
+import { useFocusEffect } from '@react-navigation/native';
 
 
 const App = (props) => {
@@ -10,21 +10,14 @@ const App = (props) => {
   const [showLoad, setshowLoad] = useState(true)
 
 
-  // useFocusEffect(useCallback(() => {
-  //     let qq = setTimeout(() => {
-  //       setshowLoad(false)
-  //     }, time ? time : 7000);
+  useFocusEffect(useCallback(() => {
+      let qq = setTimeout(() => {
+        setshowLoad(false)
+      }, time ? time : 7000);
 
-  //   return () => (clearInterval(qq))
-  // }, []))
+    return () => (clearInterval(qq))
+  }, []))
 
-  useEffect(() => {
-    let qq = setTimeout(() => {
-      setshowLoad(false)
-    }, time ? time : 7000);
-
-  return () => (clearInterval(qq))
-}, [])
 
   return (
     <View style={[{ minWidth: '100%', justifyContent: 'center', alignItems: 'center', top: 40 }, props.style]} >

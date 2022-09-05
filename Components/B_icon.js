@@ -1,26 +1,11 @@
-import React, { useRef, useState } from 'react'
-import { View, StyleSheet, Easing, Animated, Pressable } from 'react-native'
+import React, { useRef } from 'react'
+import { StyleSheet, Animated } from 'react-native'
 import Icon from '@expo/vector-icons/FontAwesome';
 import Icon2 from '@expo/vector-icons/FontAwesome5';
 
 
 const B_icon = (prop) => {
-  const [show, setshow] = useState(false)
   const { color, bgcolor="#02f", size = 1, chatRef, icon, icon2, border="#01c", style, iconSize, iconPress } = prop
-
-  // const bgClr = bgcolor ?
-  //   (bgcolor == 'red') && '#f995' ||
-  //   (bgcolor == 'blue') && '#9cf5' ||
-  //   (bgcolor == 'green') && '#1412' ||
-  //   (bgcolor == 'yellow') && '#ff96' ||
-  //   (bgcolor == 'silver') && '#ccc7' ||
-  //   (bgcolor == 'black') && '#ccc5' ||
-  //   'rgba(240,240,240,.6)'
-  //   :
-  //   'rgba(150,200,240,.5)'
-
-
-
 
   const bgClr = bgcolor ?
       (bgcolor == 'red') && '#e22a' ||
@@ -35,12 +20,8 @@ const B_icon = (prop) => {
       'rgba(150,200,240,.5)'
 
 
-
-
-
   const fadeAnim = useRef(new Animated.Value(10)).current;
 
-  // fadeAnim.addListener
 
   const fadeOut = () => {
     Animated.sequence([
@@ -53,9 +34,7 @@ const B_icon = (prop) => {
         toValue: 10,
         duration: 300,
         useNativeDriver: false,
-        // easing: Easing.bounce,
       }),
-      // setshow(true)
     ]).start();
   };
 
@@ -63,8 +42,6 @@ const B_icon = (prop) => {
     inputRange: [10, 100],
     outputRange: ["transparent", bgClr]
   })
-
-
 
   return (
     <Animated.View 
@@ -92,8 +69,6 @@ const B_icon = (prop) => {
 
         }]}
       onTouchStart={fadeOut}
-      // onResponderStart={fadeOut}
-      // show && { borderColor: iterPlt }
       >
         {
           icon ?

@@ -1,7 +1,7 @@
 import { Share } from "react-native"
 
 
-export const share = (url, message) => {
+export const share = async(url, message) => {
     await Share.share({ url, message })
 }
 
