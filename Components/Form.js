@@ -503,11 +503,10 @@ const Form = ({ f, e, p, cp, m, ch, c, t, pr, im, i, edit, s, gc,ph,
 
 
 
-
   return (
     
     // <ChangeView style={[{height: '100%',minWidth:'100%'}]}>
-    <ScrollView style={{backgroundColor:'#f0f0f0', minWidth:'100%', flexGrow:1}} >
+    <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flexGrow: 1, minWidth: '100%' }}>
 
     <View style={[styles.viewContainer,{paddingTop:top},style]} >
     

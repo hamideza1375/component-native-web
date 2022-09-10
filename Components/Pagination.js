@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import { Pressable, Text, View } from 'react-native';
-import styles from './pagination.scss';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 const range = (from, to) => {
   const range = [];
@@ -92,3 +91,27 @@ function Pagination(props) {
 
 
 export default Pagination
+
+
+const styles = StyleSheet.create({
+  pagination:{
+    flexDirection: 'row',
+    width: 315,
+    height: 45,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 'auto',
+  
+  },
+  pageitem:{
+    width: 44,
+    height: 44,
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    flexDirection: 'row',
+    borderWidth: 1,
+    borderColor:'rgb(197, 192, 192)',
+    backgroundColor: '#efffff88',
+    borderRadius: 3,
+  }
+})
