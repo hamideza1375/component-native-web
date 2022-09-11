@@ -3,7 +3,7 @@ import { Animated, View, StyleSheet } from "react-native";
 // pan.addListener(({ value }) => setPan2(value));
 
 
-const App = (props) => {
+const Swiper = (props) => {
   var das = []
 
   const pan = useRef(new Animated.Value(0)).current;
@@ -126,4 +126,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default App;
+export default Swiper;

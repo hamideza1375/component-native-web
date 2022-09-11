@@ -1,35 +1,21 @@
-import React, { useState, useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { Animated, StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import Icon from '@expo/vector-icons/FontAwesome';
-export default function App({ onPress, style, header, body, color, bgcolor, icon, icon2, size }) {
 
-const [show, setShow] = useState(true)
+export default function App({ sethidden, hidden, onPress, style, header, body, color, bgcolor, icon, icon2, iconSize, fontSize, iconPress, icon2Press }) {
 
+  const ref = useRef()
 
-const fadeAnim = useRef(new Animated.Value(0)).current;
-
-  const fadeOut = () => {
-    if (show)
-      Animated.timing(fadeAnim, {
-        toValue: 1,
-        duration: 200,
-        useNativeDriver: false
-      }).start();
-
-    else
-      Animated.timing(fadeAnim, {
-        toValue: 0,
-        duration: 200,
-        useNativeDriver: false
-      }).start();
-  };
+  useEffect(() => {
+    ref?.current && ref.current.setNativeProps({ style: { height: 0 } })
+  }, [hidden])
 
 
   return (
     <>
-      <TouchableOpacity
+      <View
         onPressIn={onPress}
-        onPress={() => { setShow(!show); fadeOut() }} activeOpacity={0.8}
+        activeOpacity={1}
         style={[styles.headView,
         {
           backgroundColor:
@@ -43,13 +29,22 @@ const fadeAnim = useRef(new Animated.Value(0)).current;
             bgcolor && bgcolor
         }
           , { borderRadius: 3 }, style]}>
-        <Text style={[styles.headText, { color: color && color || 'white' }, { fontSize: size ? size : 22.5 }]}>{header}</Text>
+        <Text
+          onPressIn={() => { sethidden(!hidden); setTimeout(() => { sethidden(!hidden) }, 1) }}
+          onPress={() => {
+            () => { sethidden(!hidden); setTimeout(() => { sethidden(!hidden) }, 2) };
+            setTimeout(() => {
+              ref.current && ref.current.setNativeProps({ style: { height: null } })
+            }, 500);
+            ref.current && ref.current.setNativeProps({ style: { height: null } })
+
+          }} style={[styles.headText, { color: color && color || 'white' }, { fontSize: fontSize ? fontSize : 17 }]}>{header}</Text>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: 105 }}>
-          {icon2 && <Icon name={icon2} color={color && color || 'white'} size={size ? size : 24} style={styles.headText} />}
-          {icon && <Icon name={icon} color={color && color || 'white'} size={size ? size : 24} style={styles.headText} />}
+          {icon2 && <Icon onPress={icon2Press} name={icon2} color={color && color || 'white'} size={iconSize ? iconSize : 24} style={styles.headText} />}
+          {icon && <Icon onPress={iconPress} name={icon} color={color && color || 'white'} size={iconSize ? iconSize : 24} style={styles.headText} />}
         </View>
-      </TouchableOpacity>
-      <Animated.View style={{ height: show?0:null, overflow: "hidden", transform:[{scale:fadeAnim}] }}>
+      </View>
+      <Animated.View ref={ref} style={{ overflow: "hidden" }}>
         <TouchableOpacity
           activeOpacity={0.8}
           style={styles.subView}>
@@ -72,12 +67,10 @@ const styles = StyleSheet.create({
     borderBottomWidth: .4,
   },
   subText: {
-    // textAlign: 'left',
-    // alignSelf: 'flex-start',
     fontSize: 17,
     fontWeight: '100',
     paddingHorizontal: 10,
-    alignItems:'center'
+    alignItems: 'center'
   },
   headView: {
     marginVertical: 5,
@@ -86,7 +79,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   headText: {
-    textAlign: "left",
     padding: 10,
     paddingVertical: 14,
   },

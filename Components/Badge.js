@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
-const Badge = ({ color, text, top, left, right, bottom, style }) => {
+const Badge = ({ bgcolor, color, text, top, left, right, bottom, style, scale=1 }) => {
     return (
         <View style={[styles.viewBadge, {
             backgroundColor: color ?
@@ -10,11 +10,11 @@ const Badge = ({ color, text, top, left, right, bottom, style }) => {
                 (color == 'green') && '#292' ||
                 (color == 'yellow') && '#fa3' ||
                 (color == 'black') && '#555' ||
-                color
+                bgcolor
                 :
-                "#f33",
+                bgcolor ? bgcolor : "#f33",
         },
-        { top: top?top:-3, left: left, right: right, bottom: bottom }, style]} >
+        { top: top ? top : -3, left, right, bottom, transform:[{scale}] }, style]} >
             <Text style={styles.textBadge} >
                 {text}
             </Text>
@@ -30,8 +30,8 @@ const styles = StyleSheet.create({
         fontWeight: '900',
     },
     viewBadge: {
-        width: 17,
-        height: 17,
+        width: 18,
+        height: 18,
         borderRadius: 90,
         justifyContent: 'center',
         alignItems: 'center',

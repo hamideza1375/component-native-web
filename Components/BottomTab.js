@@ -1,9 +1,9 @@
 import React from 'react'
 import { View, StyleSheet, Pressable } from 'react-native'
-import Icon from 'react-native-vector-icons/dist/FontAwesome';
+import Icon from '@expo/vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
 
-const Drawer = ({ route2, children, route, style, bgcolor = '#fff', color = "#777", activeColor = "#47f" }) => {
+const BottomTab = ({ route2, children, route, style, bgcolor = '#fff', color = "#777", activeColor = "#47f" }) => {
   const navigation = useNavigation()
 
   return (
@@ -72,4 +72,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default Drawer
+export default BottomTab

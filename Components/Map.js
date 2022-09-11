@@ -1,42 +1,34 @@
-import React, { useState } from 'react'
-import { PermissionsAndroid, StyleSheet, View } from 'react-native'
-import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
+import React from "react";
+import GoogleMapReact from 'google-map-react';
 
-const Map = ({ coordinate, showsUserLocation, draggable, marker, onPress, onDragEnd, onSelect }) => {
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-  const [location, setlocation] = useState(coordinate)
-
-
+export default function SimpleMap(){
+  const defaultProps = {
+    center: {
+      lat: 10.99835602,
+      lng: 77.01502627
+    },
+    zoom: 11
+  };
 
   return (
-    <View style={{ flex: 1 }}>
-      <MapView
-        onMapReady={() => {PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION).then(granted => {/* alert(granted) */});}}
-        region={coordinate}
-        showsUserLocation={showsUserLocation}
-        followsUserLocation={true}
-        onPress={onPress}
-        style={StyleSheet.absoluteFillObject}
-        onRegionChange={(e)=>{setlocation(e);}}
-        provider={PROVIDER_GOOGLE}
-        showsMyLocationButton={true}
-        showsCompass={true}
-        zoomEnabled={true}
-        rotateEnabled={true}
+    // Important! Always set the container height explicitly
+    <div style={{ height: '100vh', width: '100%' }}>
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: "AIzaSyAcLdSrUtdhBBP2sw6NnFzqRwEvK-U5D8Q" }}
+        defaultCenter={defaultProps.center}
+        defaultZoom={defaultProps.zoom}
+        yesIWantToUseGoogleMapApiInternals
+        // onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
+        heatmapLibrary={true}
       >
-        {marker && <Marker
-        followsUserLocation={true}
-          draggable={draggable}
-          coordinate={location}
-          onDragEnd={onDragEnd}
-          onSelect={onSelect}
-        />}
-
-      </MapView>
-
-    </View >
+        <AnyReactComponent
+          lat={59.955413}
+          lng={30.337844}
+          text="My Marker"
+        />
+      </GoogleMapReact>
+    </div>
   );
 }
-
-
-export default Map

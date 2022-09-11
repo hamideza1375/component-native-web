@@ -4,13 +4,12 @@ import Input from './Input'
 import Button from './Button'
 import {CheckBox} from './Html'
 import Swiper from './Swiper'
-import {Yub} from './yub'
+import yub from '../states/yub'
 import Icon from '@expo/vector-icons/FontAwesome';
 import Icon5 from '@expo/vector-icons/FontAwesome5';
 import { launchImageLibraryAsync as launchImageLibrary } from "expo-image-picker";
-import { useFocusEffect } from '@react-navigation/native'
-const newObj = new Proxy({}, Yub);
-
+// import { useFocusEffect } from '@react-navigation/native'
+const newObj = new Proxy({}, yub);
 
 
 
@@ -99,11 +98,13 @@ const Form = ({ f, e, p, cp, m, ch, c, t, pr, im, i, edit, s, gc,ph,
 
 
 
-  useFocusEffect(useCallback(() => {
+  // useFocusEffect(useCallback(() => {
+  //   changeRand && setRand(parseInt(Math.random() * 9000 + 1000))
+  // }, [show2]))
+
+  useEffect(() => {
     changeRand && setRand(parseInt(Math.random() * 9000 + 1000))
-  }, [show2]))
-
-
+  }, [show2])
 
 
   const [_fullname, set_Fullname] = useState()
@@ -500,13 +501,23 @@ const Form = ({ f, e, p, cp, m, ch, c, t, pr, im, i, edit, s, gc,ph,
   }, [change])
 
 
+   let _scrollView = (props) => {  
+    let ChangeStyle = (width > height) ? { marginBottom: 10, flex: 1 } : { flex: 1 }
+    return (
+      <ScrollView style={[ChangeStyle]} contentContainerStyle={{ flexGrow: 1, minWidth: '100%' }} {...props} >
+        {props.children}
+      </ScrollView>
+    )
+  }
+
+
 
 
 
   return (
     
     // <ChangeView style={[{height: '100%',minWidth:'100%'}]}>
-    <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flexGrow: 1, minWidth: '100%' }}>
+    <_scrollView style={{backgroundColor:'#f0f0f0'}} >
 
     <View style={[styles.viewContainer,{paddingTop:top},style]} >
     
@@ -931,7 +942,7 @@ const Form = ({ f, e, p, cp, m, ch, c, t, pr, im, i, edit, s, gc,ph,
         <View behavior={"height"} style={{flex:.5,justifyContent:'center'}}>
           <View style={{ marginVertical: 10 }} >
             <View style={[styles.viewCheckbox, { flexGrow: .4, maxHeight: 20 }]}>
-              <CheckBox onPress={() => { !checkText && setShow(!show); remember && setRemember(!remember) }} />
+              <CheckBox show={show} onPress={() => { !checkText && setShow(!show); remember && setRemember(!remember) }} />
               <Text onPress={(e) => console.log(e.nativeEvent.text)} style={{ marginLeft: 11 }} >{checkText ? checkText : "موافقت با قوانین"}</Text>
             </View>
             {_checkbox && show == false && <Text style={{ color: 'red', alignSelf: 'flex-start' }} >پرکردن فیلد الزامی هست</Text>}
@@ -1148,7 +1159,7 @@ const Form = ({ f, e, p, cp, m, ch, c, t, pr, im, i, edit, s, gc,ph,
 
       </View>
       </View>
-    </ScrollView>
+    </_scrollView>
   )
 
 }

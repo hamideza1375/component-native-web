@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import { View, Switch } from "react-native";
-
-const App = (props) => {
-
+import React from "react";
+import { Switch } from "react-native";
+const Switch = (props) => {
   return (
       <Switch
       trackColor={{ false: "#767577", true: "#81b0ff" }}
@@ -14,6 +12,4 @@ const App = (props) => {
       />
   );
 }
-
-
-export default App;
+export default Switch;

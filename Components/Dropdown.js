@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import { Pressable } from "react-native";
-import Icon from '@expo/vector-icons/FontAwesome5';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
-const Dropdown = React.forwardRef((props) => {
+const Dropdown = (props) => {
 
-  const { show,setshow, children, icon, color = '#aaa', showBgcolor = '#fff', style, iconFalse, top } = props
+  const { show, setshow, children, icon, color = '#aaa', showBgcolor = '#fff', style, iconFalse, top, onPress } = props
 
-const ref = useRef()
+  const ref = useRef()
 
   useEffect(() => {
     ref?.current && ref.current.setNativeProps({ style: { transform: [{ scale: 0 }] } })
@@ -16,13 +16,17 @@ const ref = useRef()
   return (
     <Pressable >
       <Pressable
-        onPress={() => {
+        onPressIn={() => { setshow(!show); setTimeout(() => { setshow(!show) }, 1) }}
 
-          ref.current && ref.current.setNativeProps({ style: { transform: [{ scale: 1 }] } })
+        onPress={() => {
+          () => { setshow(!show); setTimeout(() => { setshow(!show) }, 2) };
+          setTimeout(() => {
+            ref?.current && ref.current.setNativeProps({ style: { transform: [{ scale: 1 }] } })
+          }, 5);
         }}
 
         style={[{ flexDirection: 'row', padding: 2, }, style]} >
-        {!iconFalse && <Icon color={color} name={top?'caret-up':'caret-down'} style={[{ top: 3,position:'relative', right:1 }, { fontSize: 22.5 }]}></Icon>}
+        {!iconFalse && <Icon color={color} name={top ? 'caret-up' : 'caret-down'} style={[{ top: 3, position: 'relative', right: 1 }, { fontSize: 22.5 }]}></Icon>}
         <Icon color={color} name={icon ? icon : 'trash'} style={[{ fontSize: 22.5 }]}></Icon>
       </Pressable>
 
@@ -36,7 +40,7 @@ const ref = useRef()
       </Pressable>
     </Pressable>
   );
-})
+}
 
 export default Dropdown
 

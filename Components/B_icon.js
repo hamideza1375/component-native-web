@@ -1,23 +1,23 @@
 import React, { useRef } from 'react'
-import { StyleSheet, Animated } from 'react-native'
+import { StyleSheet, Animated, Pressable } from 'react-native'
 import Icon from '@expo/vector-icons/FontAwesome';
 import Icon2 from '@expo/vector-icons/FontAwesome5';
 
 
 const B_icon = (prop) => {
-  const { color, bgcolor="#02f", size = 1, chatRef, icon, icon2, border="#01c", style, iconSize, iconPress } = prop
+  const { color, bgcolor = "#02f", size = 1, chatRef, icon, icon2, border = "#01c", style, iconSize, iconPress } = prop
 
   const bgClr = bgcolor ?
-      (bgcolor == 'red') && '#e22a' ||
-      (bgcolor == 'blue') && '#01ca' ||
-      (bgcolor == 'green') && '#171a' ||
-      (bgcolor == 'yellow') && '#f9c000aa' ||
-      (bgcolor == 'silver') && '#666a' ||
-      (!border) && bgcolor ||
-      (border) && bgcolor ||
-      'rgba(240,240,240,.6)'
-      :
-      'rgba(150,200,240,.5)'
+    (bgcolor == 'red') && '#e22a' ||
+    (bgcolor == 'blue') && '#01ca' ||
+    (bgcolor == 'green') && '#171a' ||
+    (bgcolor == 'yellow') && '#f9c000aa' ||
+    (bgcolor == 'silver') && '#666a' ||
+    (!border) && bgcolor ||
+    (border) && bgcolor ||
+    'rgba(240,240,240,.6)'
+    :
+    'rgba(150,200,240,.5)'
 
 
   const fadeAnim = useRef(new Animated.Value(10)).current;
@@ -44,14 +44,14 @@ const B_icon = (prop) => {
   })
 
   return (
-    <Animated.View 
-    ref={chatRef}
-    style={[styles.animation,
-    { transform: [{ scale: size }], backgroundColor: iterPlt }, style]}>
-      <Animated.View
-      onStartShouldSetResponder={prop.onPress}
+    <Animated.View
+      ref={chatRef}
+      style={[styles.animation,
+      { transform: [{ scale: size }], backgroundColor: iterPlt }, style]}>
+      <Pressable
+        onStartShouldSetResponder={prop.onPress}
         style={[styles.pressable, {
-          borderColor: 
+          borderColor:
             (bgcolor == 'red') && '#e22' ||
             (bgcolor == 'blue') && '#01c' ||
             (bgcolor == 'green') && '#171' ||
@@ -59,7 +59,7 @@ const B_icon = (prop) => {
             (bgcolor == 'silver') && '#666' ||
             bgcolor ||
             border,
-          backgroundColor: 
+          backgroundColor:
             (bgcolor == 'red') && '#f22' ||
             (bgcolor == 'blue') && '#22f' ||
             (bgcolor == 'green') && '#080' ||
@@ -68,15 +68,15 @@ const B_icon = (prop) => {
             bgcolor
 
         }]}
-      onTouchStart={fadeOut}
+        onPress={fadeOut}
       >
         {
           icon ?
-          <Icon name={icon} color={color ? color : 'white'} size={iconSize?iconSize:28} iconPress={iconPress} />
-          :
-          <Icon2 name={icon2} color={color ? color : 'white'} size={iconSize?iconSize:28} iconPress={iconPress} />
-     }
-      </Animated.View>
+            <Icon name={icon} color={color ? color : 'white'} size={iconSize ? iconSize : 28} iconPress={iconPress} />
+            :
+            <Icon2 name={icon2} color={color ? color : 'white'} size={iconSize ? iconSize : 28} iconPress={iconPress} />
+        }
+      </Pressable>
     </Animated.View>
   )
 }

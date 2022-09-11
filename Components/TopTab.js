@@ -1,14 +1,8 @@
 import React from 'react'
 import { View, Text, StyleSheet, Pressable } from 'react-native'
-import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
-
-
 const TopTab = ({ route2, children, route,  style, bgcolor = '#fff',color="#777", activeColor="#47f" }) => {
-
   const navigation = useNavigation()
-
-
   return (
     <View style={styles.container} >
       <View style={[styles.sidebar, {backgroundColor: bgcolor }, style]} >
@@ -29,9 +23,6 @@ const TopTab = ({ route2, children, route,  style, bgcolor = '#fff',color="#777"
     </View>
   )
 }
-
-
-
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#f5f5f5',
@@ -63,21 +54,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flex: 1,
     backgroundColor: 'transparent',
-
   },
   pressableActive: {
     backgroundColor: 'transparent',
     width: '100%',
     justifyContent: 'center',
     flex: 1,
-
   },
   textActive: {
     fontSize: 17,
     color: '#777',
     textAlign: 'center',
-  },
-
+  }
 })
-
 export default TopTab
