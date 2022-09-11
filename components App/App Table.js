@@ -1,36 +1,32 @@
 import React from 'react';
-import { Table, Tbody, Thead, Tr, Tc, Th, Tb, Tbtn, Span } from './components/Html'
+import { Table, Tr, Th, Tb, Thead } from './components/Html'
 
 function App() {
+
   return (
-    <Table >
+    <Table style={{height:'50%'}} >
 
       <Thead>
         <Th>عنوان</Th>
-        <Th>ویرایش</Th>
+        <Th>22ویرایش</Th>
         <Th>ویرایش</Th>
       </Thead>
 
-      <Tbody>
-        <Tr>
-          <Tbtn>1</Tbtn>
-          <Tb>1</Tb>
-          <Tb>1</Tb>
-        </Tr>
-
-        <Tr>
-          <Tb>11</Tb>
-          <Tb>33</Tb>
-          <Tb>33</Tb>
-        </Tr>
-
-        <Tr>
-          <Tb>111</Tb>
-          <Tb>222</Tb>
-          <Tb>222</Tb>
-        </Tr>
-      </Tbody>
-
+      <Tr>
+        <Tb>عنوان</Tb>
+        <Tb>2ویرایش</Tb>
+        <Tb>ویرایش</Tb>
+      </Tr>
+      <Tr>
+        <Tb>عنوان</Tb>
+        <Tb>2ویرایش</Tb>
+        <Tb>ویرایش</Tb>
+      </Tr>
+      <Tr>
+        <Tb>عنوان</Tb>
+        <Tb>2ویرایش</Tb>
+        <Tb>ویرایش</Tb>
+      </Tr>
     </Table>
   )
 }

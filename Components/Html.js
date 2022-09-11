@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { View, Text, TextInput, ScrollView, TouchableOpacity } from 'react-native';
 import Icon from '@expo/vector-icons/FontAwesome';
+import _Button from './Button';
 // import {notoserif} from './font.scss'
 
 
@@ -11,7 +12,7 @@ let fontSize = 16
 // btitrbold
 // byekan
 
-export const Button = React.forwardRef((prop, ref) => <TouchableOpacity ref={ref} onPress={prop.onClick} {...prop} style={[{ backgroundColor: '#ccc', paddingHorizontal: 17, backgroundColor: "white", justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderRadius: 5, textAlign: 'center', height: 47, maxHeight:'100%'
+export const Button = React.forwardRef((prop, ref) => <TouchableOpacity ref={ref} onPress={prop.onClick} {...prop} style={[{ backgroundColor: '#ccc', paddingHorizontal: 17, backgroundColor: "white", justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderRadius: 5, textAlign: 'center', 
 }, prop.style]} ><Text style={[{fontSize:17},prop.textStyle]} >{prop.children}</Text></TouchableOpacity>)
 
 export const Div = React.forwardRef((props, ref) => <View ref={ref} onStartShouldSetResponder={props.onClick} {...props} style={[{ paddingVertical: 5 }, props.className, props.style]} >{props.children}</View>)
@@ -94,7 +95,7 @@ export const Input = React.forwardRef((props, ref) => {
 
 export const Textarea = React.forwardRef((props, ref) => {
   return (<TextInput onPressIn={props.onClick} autoCapitalize='none' autoCorrect={false} spellCheck={true}
-    ref={ref} multiline {...props} style={[{ fontFamily, fontSize, minHeight: 90, padding: 4, textAlign: 'right', marginHorizontal: 1.5, borderWidth: 1, borderRadius: 5, color: '#444', fontWeight: '600' }, props.className, props.style]} />)
+    ref={ref} multiline {...props} style={[{ fontFamily, fontSize, height: 90, padding: 4, textAlign: 'right', marginHorizontal: 1.5, borderWidth: 1, borderRadius: 5, color: '#444', fontWeight: '600' }, props.className, props.style]} />)
 })
 
 
@@ -106,13 +107,16 @@ export const Hr = (props) => (<Text {...props} style={[{ width: '100%', marginVe
 export const Mark = (props) => (<Text onPress={props.onClick} {...props} style={{ fontFamily, backgroundColor: '#fc7', height: 40, paddingHorizontal: 3, marginHorizontal: 2, alignSelf: 'center', fontSize, color: '#444', fontWeight: '600' }} >{props.children}</Text>)
 
 
+// export const Table = React.forwardRef((props, ref) => <View ref={ref} onStartShouldSetResponder={props.onClick} {...props} style={[{ flexDirection: 'row-reverse',  flexWrap: 'wrap', minWidth: '100%', height:'100vh' }, props.className, props.style]}>{props.children}</View>)
 
-export const Table = React.forwardRef((props, ref) => <View ref={ref} onStartShouldSetResponder={props.onClick} {...props} style={[{ flexDirection: 'row-reverse', flex: 1, flexWrap: 'wrap', minWidth: '100%' }, props.className, props.style]}>{props.children}</View>)
 
-export const Tbody = React.forwardRef((props, ref) => <View ref={ref} onStartShouldSetResponder={props.onClick} {...props} style={[{ flexDirection: 'row-reverse', flex: 1, flexWrap: 'wrap', minWidth: '100%', minHeight: '100%' }, props.className, props.style]}>{props.children}</View>)
+export const Table = React.forwardRef((props, ref) => <View ref={ref} onStartShouldSetResponder={props.onClick} {...props} style={[props.className, props.style]} >{props.children}</View>)
+
+export const TableRow = React.forwardRef((props, ref) => <View ref={ref} onStartShouldSetResponder={props.onClick} {...props} style={[{flexDirection: 'row-reverse'},props.className, props.style]} >{props.children}</View>)
 
 export const Thead = React.forwardRef((props, ref) => <View ref={ref} onStartShouldSetResponder={props.onClick} {...props} style={[{ flexDirection: 'row-reverse', minWidth: '100%' }, props.className, props.style]}>{props.children}</View>)
 
+export const TheadRow = React.forwardRef((props, ref) => <View ref={ref} onStartShouldSetResponder={props.onClick} {...props} style={[props.className, props.style]} >{props.children}</View>)
 
 
 export const Th = React.forwardRef((props, ref) =>
@@ -125,12 +129,12 @@ export const Tb = React.forwardRef((props, ref) =>
 
 
 
-export const Tbtn = React.forwardRef((props, ref) => <View ref={ref} style={[{ flex: 1, backgroundColor: 'white', borderColor: '#666', borderWidth: .8, justifyContent: 'center', alignItems: 'center', borderRadius: 1.5, }, props.style]} ><Button {...props} style={{ width: '99.8%' }} >{props.children}</Button></View>)
+export const Tbtn = React.forwardRef((props, ref) => <View ref={ref} style={[{ flex: 1, backgroundColor: 'white', borderColor: '#666', borderWidth: .8, justifyContent: 'center', alignItems: 'center', borderRadius: 1.5}, props.style]} ><_Button {...props} style={{ width: '99.8%',height:'100%', width:'100%' }} >{props.children}</_Button></View>)
 
 
-export const Tr = React.forwardRef((props, ref) => <View ref={ref} onStartShouldSetResponder={props.onClick} {...props} style={[{ flex: 1 }, props.className, props.style]} >{props.children}</View>)
+export const Tc = React.forwardRef((props, ref) => <View ref={ref} onStartShouldSetResponder={props.onClick} {...props} style={[{ flex: 1 }, props.className, props.style]} >{props.children}</View>)
 
-export const Tc = React.forwardRef((props, ref) => <View ref={ref} onStartShouldSetResponder={props.onClick} {...props} style={[{ flexDirection: 'row-reverse', flex: 1, justifyContent: 'center', }, props.className, props.style]}>{props.children}</View>)
+export const Tr = React.forwardRef((props, ref) => <View ref={ref} onStartShouldSetResponder={props.onClick} {...props} style={[{ flexDirection: 'row-reverse', flex: 1, justifyContent: 'center', }, props.className, props.style]}>{props.children}</View>)
 
 
 

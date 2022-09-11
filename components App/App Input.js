@@ -12,7 +12,7 @@ function App() {
 
   return (
     <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} >
-      <Input placeholder="fullname" icon={'eye'} iconSize={20} 
+      <Input placeholder="fullname" icon={'youtube'} iconSize={20} 
       color='silver' iconColor='silver'
         style={{ backgroundColor: 'white', height: 40, width: 200 }} />
     </SafeAreaView>

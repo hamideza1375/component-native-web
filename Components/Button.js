@@ -1,13 +1,13 @@
 import React from 'react';
-import { Button } from './Html';
+import { Button as _Button } from './Html';
 
 
-function _Button(prop) {
+function Button(prop) {
   const { color, style, outline, bgcolor, children, border = [], fontSize = 17, padding, paddingTop, paddingBottom, paddingLeft, paddingRight, paddingVertical, paddingHorizontal, height=46, width, margin, marginTop, marginBottom, marginLeft, marginRight, marginVertical, marginHorizontal } = prop
 
   return (
     !outline ?
-      <Button
+      <_Button
         {...prop}
         style={[
           {
@@ -34,9 +34,9 @@ function _Button(prop) {
             { color: 'white' }) ||
           { color: color },
           {paddingHorizontal, paddingVertical, fontSize, padding, paddingTop, paddingBottom, paddingLeft, paddingRight,}]}>
-      </Button>
+      </_Button>
       :
-      <Button
+      <_Button
       {...prop}
         style={[
           , bgcolor == 'white' ? {} :
@@ -52,8 +52,8 @@ function _Button(prop) {
           { color: '#3399ff' },
         {paddingHorizontal, paddingVertical, fontSize, padding, paddingTop, paddingBottom, paddingLeft, paddingRight}]}>
         {children}
-      </Button>
+      </_Button>
   )
 }
 
-export default _Button;
+export default Button;
