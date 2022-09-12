@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { KeyboardAvoidingView, Pressable, View, Text, TextInput, Image, StyleSheet, ScrollView, Dimensions, Animated } from 'react-native'
-import Input from './Input'
-import Button from './Button'
-import {CheckBox} from './Html'
+import {CheckBox, Input, Button} from './Html'
 import Swiper from './Swiper'
 import yub from '../states/yub'
 import Icon from '@expo/vector-icons/FontAwesome';

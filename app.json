@@ -7,10 +7,14 @@
       "**/*"
     ]
   },
-  "packagerOpts": {
-    "sourceExts": ["js", "jsx", "scss", "sass"],
-    "transformer": "node_modules/react-native-sass-transformer/index.js"
-  },
+  "plugins": [
+    [
+      "expo-image-picker",
+      {
+        "photosPermission": "The app accesses your photos to let you share them with your friends."
+      }
+    ]
+  ],
   "name": "my-project"
 }
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SafeAreaView, View, Text } from 'react-native';
 import Modal from './components/Modal'
-import Button from './components/Button'
+import {Button} from './components/Html'
 import Card from './components/Card'
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './components/Button';
+import {Button} from './components/Html';
 import download from './states/download'
 
 function App() {
