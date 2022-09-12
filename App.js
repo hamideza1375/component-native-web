@@ -1,33 +1,27 @@
 import React from 'react';
-import { Br, Button } from './components/Html';
-import { imagePicker, cameraPicker } from './states/imagePicer'
+import { I18nManager } from 'react-native';
+import ToastProvider, { Toast } from './states/toast'
+import {Button} from './components/Html'
 
+I18nManager.forceRTL(true)
+I18nManager.allowRTL(false)
+I18nManager.isRTL = true
 
 function App() {
-
-
+  let toast = new Toast()
   return (
     <>
-      <Button onClick={() => {
-        imagePicker('video')
-          .then((res) => {
-            console.log(res)
-            // axios.post({image})
-          })
-      }}>
-        imagePicker
-      </Button>
-      <Br />
-      <Button onClick={() => {
-        cameraPicker('mixsed')
-          .then((res) => {
-            console.log(res)
-            // axios.post({image})
-          })
-      }}>
-        cameraPicker
-      </Button>
-
+      <Button onClick={() => { toast.show('عنوان', 'توضیحات') }}>show</Button>
+      
+      <Button onClick={() => { toast.success('عنوان', 'توضیحات') }}>toast</Button>
+      
+      <Button onClick={() => { toast.error('عنوان', 'توضیحات') }}>error</Button>
+      
+      <Button onClick={() => { toast.info('عنوان', 'توضیحات') }}>info</Button>
+      
+      <Button onClick={() => { toast.warning('عنوان', 'توضیحات') }}>warning</Button>
+      
+      <ToastProvider />
     </>
   );
 }

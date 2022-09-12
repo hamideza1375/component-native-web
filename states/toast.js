@@ -103,7 +103,7 @@ const ToastProvider = () => {
   const start = () => {
     Animated.timing(fadeAnim, {
       toValue: 12,
-      duration: 200,
+      duration: 300,
       useNativeDriver: false
     }).start();
   };

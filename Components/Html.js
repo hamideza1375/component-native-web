@@ -79,10 +79,6 @@ export const Button = React.forwardRef((prop) => {
 
 
 
-
-
-
-
 export const Div = React.forwardRef((props, ref) => <View ref={ref} onStartShouldSetResponder={props.onClick} {...props} style={[{ paddingVertical: 5 }, props.className, props.style]} >{props.children}</View>)
 
 export const Span = React.forwardRef((props, ref) => <View ref={ref} onStartShouldSetResponder={props.onClick} {...props} style={[props.className, props.style]} >{props.children}</View>)
@@ -159,9 +155,9 @@ export const Small = React.forwardRef((props, ref) => {
 
 
 export const Input = React.forwardRef((props, ref) =>
-  <View style={[styles.container, props.style]} >
-    <TextInput ref={ref} onPress={props.onClick} autoCapitalize='none' autoCorrect={false} spellCheck={true} {...props} style={[{ textAlign: "right", width: '84.3%', fontSize: 15, padding: 6, height: '100%', minWidth: '84.3%', position: 'absolute', left: 1, color: props.color ? props.color : '#222', }, props.className, props.textStyle]} />
-    {props.icon && <View onStartShouldSetResponder={props.iconPress} style={styles.ViewIcon} ><Icon style={props.styleIcon} name={props.icon} size={props.iconSize ? props.iconSize : 22} color={props.iconColor ? props.iconColor : "#666"} /></View>}
+  <View style={[{borderWidth: .3,flexDirection: 'row',position: 'relative',minHeight: 55,height: 'auto',borderRadius: 5,backgroundColor: '#fff' }, props.style]} >
+    <TextInput ref={ref} onPress={props.onClick} autoCapitalize='none' autoCorrect={false} spellCheck={true} placeholder={props.p} {...props} style={[{ maxWidth:'85%',textAlign: "right", fontSize: 15, padding: 6, height: '100%',  position: 'absolute',  color: props.color ? props.color : '#222', }, props.className, props.textStyle]} />
+    {props.icon && <View onStartShouldSetResponder={props.iconPress} style={{width: '15%',textAlign: 'center',position: 'absolute',right: 1,borderLeftWidth: .3,height: '100%',justifyContent: 'center',alignItems: 'center'}} ><Icon style={{}} name={props.icon} size={props.iconSize ? props.iconSize : 22} color={props.iconColor ? props.iconColor : "#666"} /></View>}
   </View>
 )
 
@@ -212,45 +208,3 @@ export const Tr = React.forwardRef((props, ref) => <View ref={ref} onStartShould
 export const CheckBox = (props) => {
   return <Icon checked={props.show} onPress={() => props.setShow && props.setShow(!props.show)} name={"check"} size={18} color="#fff" {...props} style={[{ width: 18, borderWidth: .9, }, { backgroundColor: props.show === false ? '#fff' : "#2c1" }, props.style]} />
 }
-
-
-
-
-
-
-
-
-
-
-export default Input;
-const styles = StyleSheet.create({
-  ViewIcon: {
-    width: '15%',
-    textAlign: 'center',
-    position: 'absolute',
-    right: 1,
-    borderLeftWidth: .3,
-    height: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  input: {
-    textAlign: "right",
-    width: '84.3%',
-    fontSize: 15,
-    padding: 6,
-    height: '100%',
-    minWidth: '84.3%',
-    position: 'absolute',
-    left: 1,
-  },
-  container: {
-    borderWidth: .3,
-    flexDirection: 'row',
-    position: 'relative',
-    minHeight: 55,
-    height: 'auto',
-    borderRadius: 5,
-    backgroundColor: '#fff',
-  },
-})
