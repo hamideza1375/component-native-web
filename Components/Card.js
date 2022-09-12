@@ -83,7 +83,7 @@ function Card(prop) {
             </View>
           }
           {footer &&
-              <View style={[{ paddingBottom: 18, color, height: 20, width: '100%' }]}><Text style={{ textAlign: 'center' }} >{footer}</Text></View>
+              <View style={[{ paddingBottom:5,color, width: '100%' }]}><Text style={{ textAlign: 'center' }} >{footer}</Text></View>
             }
         </View>
       </Pressable>
@@ -144,7 +144,7 @@ function Card(prop) {
               </View>
             }
             {footer &&
-              <View style={[{ paddingBottom: 18, color, height: 20, width: '100%' }]}><Text style={{ textAlign: 'center' }} >{footer}</Text></View>
+              <View style={[{ paddingBottom: 5, color, width: '100%' }]}><Text style={{ textAlign: 'center' }} >{footer}</Text></View>
             }
           </View>
         </Pressable>
@@ -170,7 +170,7 @@ function Card(prop) {
           <Pressable
             {...prop}
             style={[{
-              borderWidth: 1, borderRadius: 5, minHeight: 115,
+              borderWidth: 1, borderRadius: 5, minHeight: 115,width: '100%', position: 'relative',
               borderColor:
                 !border && (
                   !bgcolor && '#fbb' ||
@@ -195,13 +195,13 @@ function Card(prop) {
                 bgcolor == 'white' && '#fff' ||
                 bgcolor
               ,
-              width: '100%', position: 'relative',
+              
             }, style]}>
-            <View style={{ padding: 12 }} >
+            <View style={[{ padding: 12,  }]} >
               {header &&
-                <View style={{
-                  width: '100%', paddingHorizontal:5,paddingVertical:12
-                }}>
+                <View style={[{
+                  paddingHorizontal:5,paddingVertical:12,width:'70%'
+                },direction === 'rtl' ? { alignSelf: 'flex-end', } : { alignSelf: 'flex-start' }]}>
                   <Text
                     style={[{
                       color:
@@ -228,11 +228,11 @@ function Card(prop) {
 
 
               <View style={[{
-                top: 8,
+                top: 12,
                 position: 'absolute',
                 height: 90,
                 justifyContent: 'center',
-              }, direction === 'rtl' ? { left: 7 } : { right: 7 }]} >
+              }, direction === 'rtl' ? { left: 5 } : { right: 5 }]} >
                 <Image source={img} style={[{
                   width: 70,
                   height: 70,
@@ -241,15 +241,15 @@ function Card(prop) {
                 }]}
                 />
                 {footer &&
-                  <View style={[{ padding: 8, color, height: 20, width: '100%' }, direction === 'rtl' ? { alignSelf: 'flex-start' } : { alignSelf: 'flex-end' }]}><Text style={{ textAlign: 'center' }} >{footer}</Text></View>
+                  <View style={[{ paddingVertical:5, color, width: '100%' }, direction === 'rtl' ? { alignSelf: 'flex-start' } : { alignSelf: 'flex-end' }]}><Text style={{ textAlign: 'center' }} >{footer}</Text></View>
                 }
               </View>
 
 
               {body &&
-                <View style={{
-                  paddingHorizontal:5,paddingVertical:12
-                }}>
+                <View style={[{
+                  paddingHorizontal:5,paddingVertical:12,width:'70%'
+                },direction === 'rtl' ? { alignSelf: 'flex-end', } : { alignSelf: 'flex-start' }]}>
                   <Text style={[{
                     color:
                       !color ?
@@ -263,7 +263,7 @@ function Card(prop) {
                           "#333"
                         :
                         color,
-                  }, direction === 'rtl' ? { textAlign: 'right' } : { textAlign: 'left' }]} >
+                  }, direction === 'rtl' ? { textAlign: 'right', } : { textAlign: 'left' }]} >
                     {body}
                   </Text>
                 </View>
@@ -283,7 +283,7 @@ function Card(prop) {
             <Pressable
               {...prop}
               style={[{
-                borderWidth: 1, borderRadius: 5,minHeight: 115,
+                borderWidth: 1, borderRadius: 5, minHeight: 115,width: '100%', position: 'relative',
                 borderColor:
                   !border && (
                     !bgcolor && '#fdb' ||
@@ -306,12 +306,13 @@ function Card(prop) {
                   bgcolor == 'black' && 'silver' ||
                   bgcolor
                 ,
-                width: '100%', position: 'relative'
               }, style]}>
 
               <View style={{ padding: 12 }} >
                 {header &&
-                  <View style={{ width: '100%', paddingVertical: 12, paddingHorizontal: 5, }}>
+                  <View style={[{
+                    paddingHorizontal:5,paddingVertical:12,width:'70%'
+                  },direction === 'rtl' ? { alignSelf: 'flex-end', } : { alignSelf: 'flex-start' }]}>
                     <Text
                       style={[{
                         color:
@@ -326,11 +327,11 @@ function Card(prop) {
                 }
 
                 <View style={[{
-                  top: 8,
+                  top: 12,
                   position: 'absolute',
                   height: 90,
                   justifyContent: 'center',
-                }, direction === 'rtl' ? { left: 7 } : { right: 7 }]} >
+                }, direction === 'rtl' ? { left: 5 } : { right: 5 }]} >
                   <Image source={img} style={[{
                     width: 70,
                     height: 70,
@@ -339,16 +340,17 @@ function Card(prop) {
                   }]}
                   />
                   {footer &&
-                    <View style={[{ padding: 8, color, height: 20, width: '100%' }, direction === 'rtl' ? { alignSelf: 'flex-start' } : { alignSelf: 'flex-end' }]}><Text style={{ textAlign: 'center' }} >{footer}</Text></View>
+                    <View style={[{ paddingVertical: 5, color, width: '100%' }, direction === 'rtl' ? { alignSelf: 'flex-start' } : { alignSelf: 'flex-end' }]}><Text style={{ textAlign: 'center' }} >{footer}</Text></View>
                   }
                 </View>
 
                 {body &&
-                  <View style={{ paddingVertical: 12, paddingHorizontal: 5, width: '100%', }}>
+                  <View style={[{
+                    paddingHorizontal:5,paddingVertical:12,width:'70%'
+                  },direction === 'rtl' ? { alignSelf: 'flex-end', } : { alignSelf: 'flex-start' }]}>
                     <Text style={[{
                       color:
                         !color ? 'black' : color,
-                      flexBasis: '80%'
                     }, direction === 'rtl' ? { textAlign: "right" } : { textAlign: "left" }]} >
                       {body}
                     </Text>

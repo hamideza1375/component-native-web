@@ -1,5 +1,5 @@
 import React from 'react';
-import { Div, H1 } from './Components/Html'
+import { Div, H1 } from './components/Html'
 import Alert from './states/alert'
 
 function App() {

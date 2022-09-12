@@ -1,13 +1,14 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
+import Button from './components/Button';
 import download from './states/download'
 
 function App() {
 
   return (
     <>
-      <button onClick={() => {
+      <Button onClick={() => {
         download('https://s32.namasha.com/videos/dl/7374690107-144p/تحلیل-تکنیکال-سولانا-آپدیت-9-شهریور-1401-144p.mp4')
-      }} >bynufd</button>
+      }} >bynufd</Button>
     </>
   )
 }

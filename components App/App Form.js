@@ -22,7 +22,6 @@ function App() {
           fIconLeft={<Text style={{ color: 'white', backgroundColor: 'blue', padding: 7 }}>del</Text>}
           fIconRight={<Text style={{ color: 'white', backgroundColor: 'red', padding: 7 }}>del</Text>}
           size={1}
-          style={{ height: 650 }}
           captcha={captcha} setCaptcha={setCaptcha} host="192.168.42.34"
           fullname={fullname} setFullname={setFullname}
           email={email} setEmail={setEmail}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from './components/Button';
 import { imagePicker, cameraPicker } from './states/imagePicer'
 
 
@@ -7,13 +8,13 @@ function App() {
   const [image, setimage] = useState({})
 
   return (
-    <div>
-      <button onClick={() => {
+    <>
+      <Button onClick={() => {
         imagePicker('photo', setimage)
         //! axios.post({image})
-      }}>click</button>
+      }}>click</Button>
 
-    </div>
+    </>
   );
 }
 

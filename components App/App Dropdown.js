@@ -9,7 +9,7 @@ function App() {
 
   return (
     <Div style={{ width: 500, height: 500, alignSelf: 'center', alignItems: 'center', justifyContent: 'center', borderWidth: 1 }}
-      onClick={() => { setshow(setshow(!show)); setTimeout(() => { setshow(setshow(!show)) }, 10) }}
+      onClick={() => { setshow(setshow(!show)); }}
     >
       <Dropdown
         iconFalse

@@ -1,11 +1,11 @@
 import React from 'react';
-import notification from './states/notification';
+import Button from './components/Button';
+import {create, close} from './states/notification';
 function App() {
   return (
     <>
-      <button onClick={() => { notification.create('سلام', 'لذراعدئهئهئ', require('./assets/a1.png')) }} >create</button>
-      <button onClick={() => { notification.click(window.location.assign('https://pushjs.org/docs/options')) }} >click</button>
-      <button onClick={() => { notification.close() }} >close</button>
+      <Button onClick={() => { create('سلام', 'لذراعدئهئهئ', require('./assets/a1.png')) }} >create</Button>
+      <Button onClick={() => { close('del') }} >close</Button>
     </>
   )
 }

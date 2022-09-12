@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { Animated, StyleSheet, View, Text, TouchableOpacity } from "react-native";
-import Icon from '@expo/vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function App({ sethidden, hidden, onPress, style, header, body, color, bgcolor, icon, icon2, iconSize, fontSize, iconPress, icon2Press }) {
 
@@ -35,8 +35,8 @@ export default function App({ sethidden, hidden, onPress, style, header, body, c
             () => { sethidden(!hidden); setTimeout(() => { sethidden(!hidden) }, 2) };
             setTimeout(() => {
               ref.current && ref.current.setNativeProps({ style: { height: null } })
-            }, 500);
-            ref.current && ref.current.setNativeProps({ style: { height: null } })
+            }, 100);
+            
 
           }} style={[styles.headText, { color: color && color || 'white' }, { fontSize: fontSize ? fontSize : 17 }]}>{header}</Text>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: 105 }}>
