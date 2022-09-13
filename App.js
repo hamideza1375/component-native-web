@@ -1,31 +1,11 @@
+
 import React from 'react';
-import { Table, Div } from './components/Html'
+import Video from './components/Video';
 
-
-
-function App() {
+export default function App() {
   return (
-    <Div style={{ height: '50%' }} >
-      <Table 
-       color={['#555','#656565','white']}
-        header={['title', 'edit', 'delete','for']}
-        body={
-          [ 
-            ['title1', 'edit1','delete1','for1' ],
-            ['title2', 'edit2','delete2','for2' ],
-            ['title3', 'edit3','delete3','for3' ],
-        ]
-        } />
-    </Div>
-  )
+    <Video source={{uri:'https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4'}} controls/>
+  );
 }
-
-
-
-export default App;
-
-
-
-
 
 
