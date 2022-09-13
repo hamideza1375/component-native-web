@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, TextInput, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, ScrollView, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
@@ -16,10 +16,8 @@ const _Button = React.forwardRef((prop, ref) => <TouchableOpacity ref={ref} onPr
 }, prop.style]} ><Text style={[{ fontSize: 17 }, prop.textStyle]} >{prop.children}</Text></TouchableOpacity>)
 
 
-
 export const Button = React.forwardRef((prop, ref) => {
   const { alignSelf, style, outline, children, fontSize = 17, p, pt, pb, pl, pr, pv, ph, h = 46, w, m, mt, mb, ml, mr, mv, mh, color, bgcolor, border = [], flexGrow, flex } = prop
-
   return (
     !outline ?
       <_Button
@@ -78,23 +76,19 @@ export const Button = React.forwardRef((prop, ref) => {
 })
 
 
-
-
-
-
-
 export const Div = React.forwardRef((prop, ref) => {
   const { style, children, p = 5, pt, pb, pl, pr, pv, ph, h, w, m, mt, mb, ml, mr, mv, mh, bgcolor, border = [], flex, alignItems, justifyContent, flexDirection, flexGrow } = prop
   return (
     <View
       ref={ref}
+      onStartShouldSetResponder={prop.onClick}
       {...prop}
       style={[{
         overflow: 'hidden',
         maxHeight: '100vh',
         flexGrow,
         flexDirection,
-        alignItems, justifyContent, flex, backgroundColor: bgcolor, borderWidth: border[0] ? border[0] : 1, borderColor: border[1] ? border[1] : 'black',
+        alignItems, justifyContent, flex, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1] ,
         height: h, width: w, margin: m, marginTop: mt, marginBottom: mb, marginLeft: ml, marginRight: mr, marginVertical: mv, marginHorizontal: mh,
         paddingHorizontal: ph, paddingVertical: pv, fontSize, padding: p, paddingTop: pt, paddingBottom: pb, paddingLeft: pl, paddingRight: pr
       }, style]}>
@@ -103,12 +97,11 @@ export const Div = React.forwardRef((prop, ref) => {
   )
 })
 
-
-
 export const Span = React.forwardRef((prop, ref) => {
   const { style, children, p, pt, pb, pl, pr, pv, ph, h, w, m, mt, mb, ml, mr, mv, mh, bgcolor, border = [], flex, alignItems, justifyContent, flexDirection, flexGrow } = prop
   return (
     <View
+      onStartShouldSetResponder={prop.onClick}
       ref={ref}
       {...prop}
       style={[{
@@ -116,7 +109,7 @@ export const Span = React.forwardRef((prop, ref) => {
         maxHeight: '100vh',
         flexGrow,
         flexDirection,
-        alignItems, justifyContent, flex, backgroundColor: bgcolor, borderWidth: border[0] ? border[0] : 1, borderColor: border[1] ? border[1] : 'black',
+        alignItems, justifyContent, flex, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
         height: h, width: w, margin: m, marginTop: mt, marginBottom: mb, marginLeft: ml, marginRight: mr, marginVertical: mv, marginHorizontal: mh,
         paddingHorizontal: ph, paddingVertical: pv, fontSize, padding: p, paddingTop: pt, paddingBottom: pb, paddingLeft: pl, paddingRight: pr
       }, style]}>
@@ -124,21 +117,20 @@ export const Span = React.forwardRef((prop, ref) => {
     </View>
   )
 })
-
-
 
 export const Row = React.forwardRef((prop, ref) => {
   const { style, children, p = 5, pt, pb, pl, pr, pv, ph, h, w, m, mt, mb, ml, mr, mv, mh, bgcolor, border = [], flex, alignItems, justifyContent, flexDirection = 'row', flexGrow } = prop
   return (
     <View
       ref={ref}
+      onStartShouldSetResponder={prop.onClick}
       {...prop}
       style={[{
         overflow: 'hidden',
         maxHeight: '100vh',
         flexGrow,
         flexDirection,
-        alignItems, justifyContent, flex, backgroundColor: bgcolor, borderWidth: border[0] ? border[0] : 1, borderColor: border[1] ? border[1] : 'black',
+        alignItems, justifyContent, flex, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
         height: h, width: w, margin: m, marginTop: mt, marginBottom: mb, marginLeft: ml, marginRight: mr, marginVertical: mv, marginHorizontal: mh,
         paddingHorizontal: ph, paddingVertical: pv, fontSize, padding: p, paddingTop: pt, paddingBottom: pb, paddingLeft: pl, paddingRight: pr
       }, style]}>
@@ -146,20 +138,20 @@ export const Row = React.forwardRef((prop, ref) => {
     </View>
   )
 })
-
 
 export const RowSpan = React.forwardRef((prop, ref) => {
   const { style, children, p, pt, pb, pl, pr, pv, ph, h, w, m, mt, mb, ml, mr, mv, mh, bgcolor, border = [], flex, alignItems, justifyContent, flexDirection = 'row', flexGrow } = prop
   return (
     <View
       ref={ref}
+      onStartShouldSetResponder={prop.onClick}
       {...prop}
       style={[{
         overflow: 'hidden',
         maxHeight: '100vh',
         flexGrow,
         flexDirection,
-        alignItems, justifyContent, flex, backgroundColor: bgcolor, borderWidth: border[0] ? border[0] : 1, borderColor: border[1] ? border[1] : 'black',
+        alignItems, justifyContent, flex, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
         height: h, width: w, margin: m, marginTop: mt, marginBottom: mb, marginLeft: ml, marginRight: mr, marginVertical: mv, marginHorizontal: mh,
         paddingHorizontal: ph, paddingVertical: pv, fontSize, padding: p, paddingTop: pt, paddingBottom: pb, paddingLeft: pl, paddingRight: pr
       }, style]}>
@@ -167,18 +159,18 @@ export const RowSpan = React.forwardRef((prop, ref) => {
     </View>
   )
 })
-
 
 export const Scroll = React.forwardRef((prop, ref) => {
   const { style, contentContainerStyle, className, children, p = 5, pt, pb, pl, pr, pv, ph, h, w, m, mt, mb, ml, mr, mv, mh, bgcolor, border = [], flex, alignItems, justifyContent, flexDirection, flexGrow } = prop
   return (
     <ScrollView
       ref={ref}
+      onStartShouldSetResponder={prop.onClick}
       {...prop}
       style={[{
         flexDirection,
         overflowX: 'hidden',
-        alignItems, justifyContent, flex, backgroundColor: bgcolor, borderWidth: border[0] ? border[0] : 1, borderColor: border[1] ? border[1] : 'black',
+        alignItems, justifyContent, flex, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
         height: h, width: w, margin: m, marginTop: mt, marginBottom: mb, marginLeft: ml, marginRight: mr, marginVertical: mv, marginHorizontal: mh,
         paddingHorizontal: ph, paddingVertical: pv, fontSize, padding: p, paddingTop: pt, paddingBottom: pb, paddingLeft: pl, paddingRight: pr
       }, className, style]}
@@ -188,19 +180,19 @@ export const Scroll = React.forwardRef((prop, ref) => {
     </ScrollView>
   )
 })
-
 
 export const ScrollHorizontal = React.forwardRef((prop, ref) => {
   const { style, contentContainerStyle, className, children, p = 5, pt, pb, pl, pr, pv, ph, h, w, m, mt, mb, ml, mr, mv, mh, bgcolor, border = [], flex, alignItems, justifyContent, flexDirection, flexGrow } = prop
   return (
     <ScrollView
       ref={ref}
+      onStartShouldSetResponder={prop.onClick}
       horizontal={true}
       {...prop}
       style={[{
         overflowY: 'hidden',
         flexDirection,
-        alignItems, justifyContent, flex, backgroundColor: bgcolor, borderWidth: border[0] ? border[0] : 1, borderColor: border[1] ? border[1] : 'black',
+        alignItems, justifyContent, flex, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
         height: h, width: w, margin: m, marginTop: mt, marginBottom: mb, marginLeft: ml, marginRight: mr, marginVertical: mv, marginHorizontal: mh,
         paddingHorizontal: ph, paddingVertical: pv, fontSize, padding: p, paddingTop: pt, paddingBottom: pb, paddingLeft: pl, paddingRight: pr
       }, className, style]}
@@ -211,18 +203,18 @@ export const ScrollHorizontal = React.forwardRef((prop, ref) => {
   )
 })
 
-
 export const Ul = React.forwardRef((prop, ref) => {
   const { style, children, p = 5, pt, pb, pl, pr, pv, ph, h, w, m, mt, mb, ml, mr, mv, mh, bgcolor, border = [], flex, alignItems, justifyContent, flexDirection, flexGrow } = prop
   return (
     <View
       ref={ref}
+      onStartShouldSetResponder={prop.onClick}
       {...prop}
       style={[{
         maxHeight: '100vh',
         flexGrow,
         flexDirection,
-        alignItems, justifyContent, flex, backgroundColor: bgcolor, borderWidth: border[0] ? border[0] : 1, borderColor: border[1] ? border[1] : 'black',
+        alignItems, justifyContent, flex, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
         height: h, width: w, margin: m, marginTop: mt, marginBottom: mb, marginLeft: ml, marginRight: mr, marginVertical: mv, marginHorizontal: mh,
         paddingHorizontal: ph, paddingVertical: pv, fontSize, padding: p, paddingTop: pt, paddingBottom: pb, paddingLeft: pl, paddingRight: pr
       }, style]}>
@@ -230,6 +222,8 @@ export const Ul = React.forwardRef((prop, ref) => {
     </View>
   )
 })
+
+
 
 
 export const H1 = React.forwardRef((props, ref) => {
@@ -251,7 +245,6 @@ export const H1 = React.forwardRef((props, ref) => {
     }, props.className, props.style]} >{props.children}</Text>)
 })
 
-
 export const H2 = React.forwardRef((props, ref) => {
   const { alignSelf, fontSize = 26, p = 7, pt, pb, pl, pr, pv, ph, h, w, m, mt, mb, ml, mr, mv, mh, color = '#000', bgcolor, border = [], flexGrow, flex } = props
   if (props.value)
@@ -270,7 +263,6 @@ export const H2 = React.forwardRef((props, ref) => {
       flexGrow, flex, alignSelf
     }, props.className, props.style]} >{props.children}</Text>)
 })
-
 
 export const H3 = React.forwardRef((props, ref) => {
   const { alignSelf, fontSize = 24, p = 7, pt, pb, pl, pr, pv, ph, h, w, m, mt, mb, ml, mr, mv, mh, color = '#000', bgcolor, border = [], flexGrow, flex } = props
@@ -370,7 +362,6 @@ export const I = React.forwardRef((props, ref) => {
     }, props.className, props.style]} >{props.children}</Text>)
 })
 
-
 export const P = React.forwardRef((props, ref) => {
   const { alignSelf, fontSize = 16, p = 7, pt, pb, pl, pr, pv, ph, h, w, m, mt, mb, ml, mr, mv, mh, color = '#444', bgcolor, border = [], flexGrow, flex } = props
   if (props.value) return (<TextInput onPressIn={props.onClick} caretHidden={true} ref={ref} value={props.value} multiline showSoftInputOnFocus={false} {...props}
@@ -407,8 +398,6 @@ export const Li = React.forwardRef((props, ref) => {
     }, props.className, props.style]} >{props.children}</Text>)
 })
 
-
-
 export const Small = React.forwardRef((props, ref) => {
   const { alignSelf, fontSize = 13.5, p = 7, pt, pb, pl, pr, pv, ph, h, w, m, mt, mb, ml, mr, mv, mh, color = '#444', bgcolor, border = [], flexGrow, flex } = props
   if (props.value) return (<TextInput onPressIn={props.onClick} caretHidden={true} ref={ref} value={props.value} multiline showSoftInputOnFocus={false} {...props}
@@ -430,40 +419,34 @@ export const Small = React.forwardRef((props, ref) => {
 
 
 export const Input = React.forwardRef((props, ref) => {
-  const { alignSelf, fontSize = 16.5, p = 7, pt, pb, pl, pr, pv, ph, h=50, w, m, mt, mb, ml, mr, mv, mh, color = '#444',
+  const { alignSelf, fontSize = 16.5, p = 7, pt, pb, pl, pr, pv, ph, h = 50, w, m, mt, mb, ml, mr, mv, mh, color = '#444',
     bgcolor, border = [.3], flexGrow, flex } = props
   return (<View style={[{
     margin: m, marginTop: mt, marginBottom: mb, marginRight: mr, marginLeft: ml, marginHorizontal: mh, marginVertical: mv, color,
     bgcolor, borderWidth: border[0], borderColor: border[1], fontSize, alignSelf, flexGrow, flex, width: w, height: h,
     flexDirection: 'row', position: 'relative',
-     borderRadius: 5,
+    borderRadius: 5,
     backgroundColor: '#fff'
   }, props.style]} >
-    <TextInput ref={ref} onPress={props.onClick} autoCapitalize='none' autoCorrect={false} spellCheck={true} placeholder={props.p} {...props} style={[{ minWidth:'84%',maxWidth: '85%', textAlign: "right", fontSize: 15, padding: 6, height: '100%', position: 'absolute', color: props.color ? props.color : '#222', }, props.className, props.textStyle]} />
+    <TextInput ref={ref} onPress={props.onClick} autoCapitalize='none' autoCorrect={false} spellCheck={true} placeholder={props.p} {...props} style={[{ minWidth: '84%', maxWidth: '85%', textAlign: "right", fontSize: 15, padding: 6, height: '100%', position: 'absolute', color: props.color ? props.color : '#222', }, props.className, props.textStyle]} />
     {props.icon && <View onStartShouldSetResponder={props.iconPress} style={{ width: '15%', textAlign: 'center', position: 'absolute', right: 1, borderLeftWidth: .3, height: '100%', justifyContent: 'center', alignItems: 'center' }} ><Icon style={{}} name={props.icon} size={props.iconSize ? props.iconSize : 22} color={props.iconColor ? props.iconColor : "#666"} /></View>}
   </View>)
 })
 
-
 export const Textarea = React.forwardRef((props, ref) => {
+  const { h = 100 } = props
   return (<TextInput onPressIn={props.onClick} autoCapitalize='none' autoCorrect={false} spellCheck={true}
-    ref={ref} multiline {...props} style={[{ fontFamily, fontSize, padding: 15, textAlign: 'right', marginHorizontal: 1.5, borderWidth: 1, borderRadius: 5, color: '#444', fontWeight: '600' }, props.className, props.style]} />)
+    ref={ref} multiline {...props} style={[{ fontFamily, fontSize: 16, padding: 15, textAlign: 'right', marginHorizontal: 1.5, borderWidth: 1, borderRadius: 5, color: '#444', fontWeight: '600', height: h }, props.className, props.style]} />)
 })
-
-
 
 export const Br = (props) => (<Text {...props} style={[{ width: '100%', marginVertical: 5 }, props.className, props.style]} />)
 
 export const Hr = (props) => (<Text {...props} style={[{ width: '100%', marginVertical: 5, borderTopWidth: 1 }, props.className, props.style]} />)
 
-export const Mark = (props) => (<Text onPress={props.onClick} {...props} style={{ fontFamily, backgroundColor: '#fc7', height: 40, paddingHorizontal: 3, marginHorizontal: 2, alignSelf: 'center', fontSize, color: '#444', fontWeight: '600' }} >{props.children}</Text>)
-
-
-
+export const Mark = (props) => (<Text onPress={props.onClick} {...props} style={{ borderRadius:2.5,fontFamily, backgroundColor: '#fc7', height: props.h, paddingVertical:7,paddingHorizontal:4, margin: props.m, marginHorizontal: props.mh?props.mh:2.5, marginVertical: props.mv, marginRight: props.mr, marginLeft: props.ml, marginTop: props.mt, marginBottom: props.mb, alignSelf: 'center', fontSize, color: '#444', fontWeight: '600' }} >{props.children}</Text>)
 
 export const CheckBox = (props) => {
   const { alignSelf, m, mt, mb, ml, mr, mv, mh } = props
-
   return <Icon checked={props.show} onPress={() => props.setShow && props.setShow(!props.show)} name={"check"} size={18.5} color="#fff" {...props}
     style={[{ width: 20, height: 20, borderWidth: .9, textAlign: 'center', margin: m, alignSelf, marginTop: mt, marginBottom: mb, marginLeft: ml, marginRight: mr, marginHorizontal: mh, marginVertical: mv }, { backgroundColor: props.show === false ? '#fff' : "#2c1" }, props.style]} />
 }
@@ -471,39 +454,38 @@ export const CheckBox = (props) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-export const Table = React.forwardRef((props, ref) => <View ref={ref} onStartShouldSetResponder={props.onClick} {...props} style={[props.className, props.style]} >{props.children}</View>)
-
-export const TableRow = React.forwardRef((props, ref) => <View ref={ref} onStartShouldSetResponder={props.onClick} {...props} style={[{ flexDirection: 'row-reverse' }, props.className, props.style]} >{props.children}</View>)
-
-export const Thead = React.forwardRef((props, ref) => <View ref={ref} onStartShouldSetResponder={props.onClick} {...props} style={[{ flexDirection: 'row-reverse', minWidth: '100%' }, props.className, props.style]}>{props.children}</View>)
-
-export const TheadRow = React.forwardRef((props, ref) => <View ref={ref} onStartShouldSetResponder={props.onClick} {...props} style={[props.className, props.style]} >{props.children}</View>)
-
-
 export const Th = React.forwardRef((props, ref) =>
-  <View ref={ref} {...props} style={[{ flex: 1, backgroundColor: 'white', borderColor: '#666', borderWidth: .8, justifyContent: 'center', alignItems: 'center', borderRadius: 1.5 }, props.style]} >
-    <Text style={[{ fontFamily, fontWeight: 'bold', fontSize, paddingVertical: 10, textShadowRadius: 1, textShadowColor: 'black' }, props.textStyle]}> {props.children}</Text></View>)
+  <View ref={ref} {...props} style={[{ flex: 1, backgroundColor: 'white', borderColor: '#888',  borderWidth:1.5, justifyContent: 'center', alignItems: 'center', borderRadius: 1.5 }, props.style]} >
+    <Text style={[{ fontFamily, fontWeight: 'bold', fontSize, paddingVertical: 10, textShadowRadius: 1.3, textShadowColor: 'red' }, props.textStyle]}> {props.children}</Text></View>)
 
 export const Tb = React.forwardRef((props, ref) =>
-  <View ref={ref} style={[{ flex: 1, backgroundColor: 'white', borderColor: '#666', borderWidth: .8, justifyContent: 'center', alignItems: 'center', borderRadius: 1.5 }, props.style]} >
+  <View ref={ref} style={[{ flex: 1, backgroundColor: 'white', borderColor: '#aaa',  borderWidth:1,  justifyContent: 'center', alignItems: 'center', borderRadius: 1.5 }, props.style]} >
     <Text style={[{ fontFamily, fontWeight: '600', color: '#555', fontSize, paddingVertical: 10, }, props.textStyle]} > {props.children}</Text></View>)
-
-
 
 export const Tbtn = React.forwardRef((props, ref) => <View ref={ref} style={[{ flex: 1, backgroundColor: 'white', borderColor: '#666', borderWidth: .8, justifyContent: 'center', alignItems: 'center', borderRadius: 1.5 }, props.style]} ><Button {...props} style={{ width: '99.8%', height: '100%', width: '100%' }} >{props.children}</Button></View>)
 
-
-export const Tc = React.forwardRef((props, ref) => <View ref={ref} onStartShouldSetResponder={props.onClick} {...props} style={[{ flex: 1 }, props.className, props.style]} >{props.children}</View>)
-
-export const Tr = React.forwardRef((props, ref) => <View ref={ref} onStartShouldSetResponder={props.onClick} {...props} style={[{ flexDirection: 'row-reverse', flex: 1, justifyContent: 'center', }, props.className, props.style]}>{props.children}</View>)
+let odd =[]
+export function Table({ body, header, color }) {
+  for(let i = 0; i <= 100; i++){
+    if(i % 2 == 0)
+    odd.push(i)
+  }
+  let bgColor = (key) => ([{backgroundColor: odd.includes(key) ? color[0] : color[1] }])
+  let textStyle ={color:color[2],textShadowColor:color[2]}
+  return (
+    <Span style={{ height: '50%', }} >
+      <RowSpan flexDirection='row-reverse' >
+        {header.map((f, i) => (<Th style={[bgColor(1)]} textStyle={[textStyle]} key={i}>{f}</Th>))}
+      </RowSpan>
+      <Span>
+        {body.map((f, i) => (
+          <RowSpan flexDirection='row-reverse' key={i}>
+            {Object.values(f).map((a,n) => (
+              <Tb style={ bgColor(i)} textStyle={textStyle} >{a}</Tb>
+            ))}
+          </RowSpan>
+        ))}
+      </Span>
+    </Span>
+  )
+}
