@@ -1,21 +1,43 @@
-import React from 'react';
-import { View, SafeAreaView, I18nManager } from 'react-native';
-import {Input} from './components/Html';
-
-
-I18nManager.forceRTL(true)
-I18nManager.allowRTL(false)
+import React, {useState} from 'react';
+import { View } from 'react-native';
+import {CheckBox, Div, H1, H2, H3, H4, H5, H6, I, Input, Li, P, Row, Small} from './components/Html';
 
 
 
 function App() {
 
+
   return (
-    <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} >
-      <Input ref={e=>e&&e.setNativeProps({style:{color:'red'}}) } placeholder="fullname" icon={'youtube'} iconSize={20} 
-      color='silver' iconColor='silver'
-        style={{ backgroundColor: 'white', height: 40, width: 200 }} />
-    </SafeAreaView>
+      <Div bgcolor='silver' >
+        <Input
+        //  alignSelf={'flex-end'}
+          // fontSize={44}
+          // p={22}
+          // pt={22}
+          // pb={22}
+          // pl={22}
+          // pr={22}
+          // pv={22}
+          // ph={22}
+          // h={12}
+          // w={22}
+          // m={22}
+          // mt={22}
+          // mb={22}
+          // ml={22}
+          // mr={-22}
+          // mv={22}
+          // mh={22}
+          // color={'blue'}
+          // bgcolor={'red'}
+          // border ={[1,'red']}
+          // flexGrow={30}
+          // flex={5}
+          icon='eye'
+          value={'salam'}
+        >
+        </Input>
+      </Div>
   )
 }
 
