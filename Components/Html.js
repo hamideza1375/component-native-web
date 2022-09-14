@@ -11,9 +11,9 @@ let fontSize = 16
 
 
 const _Button = React.forwardRef((prop, ref) => <TouchableOpacity ref={ref} onPress={prop.onClick} {...prop} style={[{
-  backgroundColor: '#ccc', paddingHorizontal: 17, backgroundColor: "white", justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderRadius: 5, textAlign: 'center',
+  backgroundColor: '#ccc', paddingHorizontal: 10, backgroundColor: "white", justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderRadius: 5, textAlign: 'center',
   alignSelf: prop.alignSelf
-}, prop.style]} ><Text style={[{ fontSize: 17 }, prop.textStyle]} >{prop.children}</Text></TouchableOpacity>)
+}, prop.style]} ><Text style={[prop.textStyle]} >{prop.children}</Text></TouchableOpacity>)
 
 
 export const Button = React.forwardRef((prop, ref) => {
@@ -460,17 +460,17 @@ export const CheckBox = (props) => {
 
 export const Th = React.forwardRef((props, ref) =>
   <View ref={ref} {...props} style={[{ flex: 1, backgroundColor: 'white', borderColor: '#888',  borderWidth:1.5, justifyContent: 'center', alignItems: 'center', borderRadius: 1.5 }, props.style]} >
-    <Text style={[{ textAlign:'center',fontFamily, fontWeight: 'bold', fontSize:15, paddingVertical: 10, textShadowRadius: 1.3, textShadowColor: 'red' }, props.textStyle]}> {props.children}</Text></View>)
+    <Text style={[{ textAlign:'center',fontFamily:fontFamilyH,fontWeight:'600', fontSize:15, paddingVertical: 10, textShadowRadius: 1.3, textShadowColor: 'red' }, props.textStyle]}> {props.children}</Text></View>)
 
 export const Tb = React.forwardRef((props, ref) =>
   <View ref={ref} style={[{ flex: 1, backgroundColor: 'white', borderColor: '#aaa',  borderWidth:1,  justifyContent: 'center', alignItems: 'center', borderRadius: 1.5 }, props.style]} >
     <Text style={[{ textAlign:'center',fontFamily, fontWeight: '400', color: '#555', fontSize:15, paddingVertical: 10, }, props.textStyle]} > {props.children}</Text></View>)
 
-export const Tbtn = React.forwardRef((props, ref) => <View ref={ref} style={[{ flex: 1, backgroundColor: 'white', borderColor: '#666', borderWidth: .8, justifyContent: 'center', alignItems: 'center', borderRadius: 1.5, }, props.style]} ><Button {...props} textStyle={[{fontSize:15},props.textStyle]} style={{ width: '99.8%', flex:1, width: '100%', }} >{props.children}</Button></View>)
+export const Tbtn = React.forwardRef((props, ref) => <View ref={ref} style={[{ flex: 1, backgroundColor: 'white', borderColor: '#666', borderWidth: .8, justifyContent: 'center', alignItems: 'center', borderRadius: 1.5, }, props.style]} ><Button {...props} textStyle={[{fontSize:15},props.textStyle]} style={{ width: '99.8%', flex:1, width: '100%',paddingHorizontal:0 }} >{props.children}</Button></View>)
 
 
 let odd =[]
-export function Table({ h,fontSize=12,body, header, color,btn1onClick,btn2onClick,btn3onClick,btn4onClick,btn5onClick, btn6onClick, btn7onClick, btn1 ,btn2 ,btn3 ,btn4 ,btn5 ,btn6 ,btn7
+export function Table({ h,fontSize=13,body, header, color,btn1onClick,btn2onClick,btn3onClick,btn4onClick,btn5onClick, btn6onClick, btn7onClick, btn1 ,btn2 ,btn3 ,btn4 ,btn5 ,btn6 ,btn7
 }) {
   for(let i = 0; i <= 100; i++){
     if(i % 2 == 0)
@@ -481,19 +481,19 @@ export function Table({ h,fontSize=12,body, header, color,btn1onClick,btn2onClic
   return (
     <Span flex={1} >
       <RowSpan flexDirection='row-reverse' >
-        {header.map((f, i) => (<Th style={[bgColor(1)]} textStyle={[textStyle,{fontSize}]} key={i}>{f}</Th>))}
+        {header.map((f, i) => (<Th style={[bgColor(1)]} textStyle={[textStyle,{fontSize:fontSize + 1}]} key={i}>{f}</Th>))}
       </RowSpan>
       <Span flex={1}>
         {body.map((f, i) => (
           <RowSpan flex={1} style={{maxHeight:h}} flexDirection='row-reverse' key={i}>
             {Object.values(f).map((a,n) => (
-            btn1onClick && n === 0?  <Tbtn key={n} onPress={btn1onClick} style={ bgColor(i)} textStyle={{fontSize}} bgcolor={btn1} >{a}</Tbtn>:
-             btn2onClick && n === 1? <Tbtn key={n} onPress={btn2onClick} style={ bgColor(i)} textStyle={{fontSize}} bgcolor={btn2} >{a}</Tbtn>:
-             btn3onClick && n === 2? <Tbtn key={n} onPress={btn3onClick} style={ bgColor(i)} textStyle={{fontSize}} bgcolor={btn3} >{a}</Tbtn>:
-             btn4onClick && n === 3? <Tbtn key={n} onPress={btn4onClick} style={ bgColor(i)} textStyle={{fontSize}} bgcolor={btn4} >{a}</Tbtn>:
-             btn5onClick && n === 4? <Tbtn key={n} onPress={btn5onClick} style={ bgColor(i)} textStyle={{fontSize}} bgcolor={btn5} >{a}</Tbtn>:
-             btn6onClick && n === 5? <Tbtn key={n} onPress={btn6onClick} style={ bgColor(i)} textStyle={{fontSize}} bgcolor={btn6} >{a}</Tbtn>:
-             btn7onClick && n === 6? <Tbtn key={n} onPress={btn7onClick} style={ bgColor(i)} textStyle={{fontSize}} bgcolor={btn7} >{a}</Tbtn>:
+            btn1onClick && n === 0?  <Tbtn key={n} onPress={btn1onClick} style={ bgColor(i)} textStyle={{fontSize:fontSize - 1.5}} bgcolor={btn1} >{a}</Tbtn>:
+             btn2onClick && n === 1? <Tbtn key={n} onPress={btn2onClick} style={ bgColor(i)} textStyle={{fontSize:fontSize - 1.5}} bgcolor={btn2} >{a}</Tbtn>:
+             btn3onClick && n === 2? <Tbtn key={n} onPress={btn3onClick} style={ bgColor(i)} textStyle={{fontSize:fontSize - 1.5}} bgcolor={btn3} >{a}</Tbtn>:
+             btn4onClick && n === 3? <Tbtn key={n} onPress={btn4onClick} style={ bgColor(i)} textStyle={{fontSize:fontSize - 1.5}} bgcolor={btn4} >{a}</Tbtn>:
+             btn5onClick && n === 4? <Tbtn key={n} onPress={btn5onClick} style={ bgColor(i)} textStyle={{fontSize:fontSize - 1.5}} bgcolor={btn5} >{a}</Tbtn>:
+             btn6onClick && n === 5? <Tbtn key={n} onPress={btn6onClick} style={ bgColor(i)} textStyle={{fontSize:fontSize - 1.5}} bgcolor={btn6} >{a}</Tbtn>:
+             btn7onClick && n === 6? <Tbtn key={n} onPress={btn7onClick} style={ bgColor(i)} textStyle={{fontSize:fontSize - 1.5}} bgcolor={btn7} >{a}</Tbtn>:
               <Tb key={n} style={ bgColor(i)} textStyle={[textStyle,{fontSize}]} >{a}</Tb>
             ))}
           </RowSpan>
