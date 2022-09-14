@@ -31,7 +31,7 @@ function App() {
         btn7={'yellow'}
         btn7onClick={()=>{alert('yellow')}}
         h={55}
-        fontSize={10}
+        // fontSize={9}
         />
   )
 }

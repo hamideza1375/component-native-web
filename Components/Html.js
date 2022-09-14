@@ -3,12 +3,12 @@ import { View, Text, TextInput, ScrollView, TouchableOpacity } from 'react-nativ
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
-let fontFamily = 'serif'
+let fontFamilyH = ' serif_Bold'
+let fontFamily = 'serif_Regular'
+
 let fontSize = 16
 
-// grand
-// btitrbold
-// byekan
+
 
 const _Button = React.forwardRef((prop, ref) => <TouchableOpacity ref={ref} onPress={prop.onClick} {...prop} style={[{
   backgroundColor: '#ccc', paddingHorizontal: 17, backgroundColor: "white", justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderRadius: 5, textAlign: 'center',
@@ -237,14 +237,14 @@ export const H1 = React.forwardRef((props, ref) => {
       style={[{
         padding: p, paddingLeft: pl, paddingRight: pr, paddingBottom: pb, paddingTop: pt, paddingVertical: pv, paddingHorizontal: ph,
         margin: m, marginTop: mt, marginBottom: mb, marginLeft: ml, marginRight: mr, marginVertical: mv, marginHorizontal: mh,
-        height: h, width: w, fontFamily, fontSize, fontWeight: 'bold', color, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
+        height: h, width: w, fontFamily:fontFamilyH, fontSize, fontWeight:'600', color, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
         flexGrow, flex, alignSelf
       }, props.className, props.style]} />)
   else return (<Text onPress={props.onClick} ref={ref} {...props}
     style={[{
       padding: p, paddingLeft: pl, paddingRight: pr, paddingBottom: pb, paddingTop: pt, paddingVertical: pv, paddingHorizontal: ph,
       margin: m, marginTop: mt, marginBottom: mb, marginLeft: ml, marginRight: mr, marginVertical: mv, marginHorizontal: mh,
-      height: h, width: w, fontFamily, fontSize, fontWeight: 'bold', color, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
+      height: h, width: w, fontFamily:fontFamilyH, fontSize, fontWeight:'600', color, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
       flexGrow, flex, alignSelf
     }, props.className, props.style]} >{props.children}</Text>)
 })
@@ -256,14 +256,14 @@ export const H2 = React.forwardRef((props, ref) => {
       style={[{
         padding: p, paddingLeft: pl, paddingRight: pr, paddingBottom: pb, paddingTop: pt, paddingVertical: pv, paddingHorizontal: ph,
         margin: m, marginTop: mt, marginBottom: mb, marginLeft: ml, marginRight: mr, marginVertical: mv, marginHorizontal: mh,
-        height: h, width: w, fontFamily, fontSize, fontWeight: 'bold', color, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
+        height: h, width: w, fontFamily:fontFamilyH, fontSize, fontWeight:'600', color, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
         flexGrow, flex, alignSelf
       }, props.className, props.style]} />)
   else return (<Text onPress={props.onClick} ref={ref} {...props}
     style={[{
       padding: p, paddingLeft: pl, paddingRight: pr, paddingBottom: pb, paddingTop: pt, paddingVertical: pv, paddingHorizontal: ph,
       margin: m, marginTop: mt, marginBottom: mb, marginLeft: ml, marginRight: mr, marginVertical: mv, marginHorizontal: mh,
-      height: h, width: w, fontFamily, fontSize, fontWeight: 'bold', color, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
+      height: h, width: w, fontFamily:fontFamilyH, fontSize, fontWeight:'600', color, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
       flexGrow, flex, alignSelf
     }, props.className, props.style]} >{props.children}</Text>)
 })
@@ -275,14 +275,14 @@ export const H3 = React.forwardRef((props, ref) => {
       style={[{
         padding: p, paddingLeft: pl, paddingRight: pr, paddingBottom: pb, paddingTop: pt, paddingVertical: pv, paddingHorizontal: ph,
         margin: m, marginTop: mt, marginBottom: mb, marginLeft: ml, marginRight: mr, marginVertical: mv, marginHorizontal: mh,
-        height: h, width: w, fontFamily, fontSize, fontWeight: 'bold', color, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
+        height: h, width: w, fontFamily:fontFamilyH, fontSize, fontWeight:'600', color, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
         flexGrow, flex, alignSelf
       }, props.className, props.style]} />)
   else return (<Text onPress={props.onClick} ref={ref} {...props}
     style={[{
       padding: p, paddingLeft: pl, paddingRight: pr, paddingBottom: pb, paddingTop: pt, paddingVertical: pv, paddingHorizontal: ph,
       margin: m, marginTop: mt, marginBottom: mb, marginLeft: ml, marginRight: mr, marginVertical: mv, marginHorizontal: mh,
-      height: h, width: w, fontFamily, fontSize, fontWeight: 'bold', color, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
+      height: h, width: w, fontFamily:fontFamilyH, fontSize, fontWeight:'600', color, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
       flexGrow, flex, alignSelf
     }, props.className, props.style]} >{props.children}</Text>)
 })
@@ -294,14 +294,14 @@ export const H4 = React.forwardRef((props, ref) => {
       style={[{
         padding: p, paddingLeft: pl, paddingRight: pr, paddingBottom: pb, paddingTop: pt, paddingVertical: pv, paddingHorizontal: ph,
         margin: m, marginTop: mt, marginBottom: mb, marginLeft: ml, marginRight: mr, marginVertical: mv, marginHorizontal: mh,
-        height: h, width: w, fontFamily, fontSize, fontWeight: 'bold', color, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
+        height: h, width: w, fontFamily:fontFamilyH, fontSize, fontWeight:'600', color, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
         flexGrow, flex, alignSelf
       }, props.className, props.style]} />)
   else return (<Text onPress={props.onClick} ref={ref} {...props}
     style={[{
       padding: p, paddingLeft: pl, paddingRight: pr, paddingBottom: pb, paddingTop: pt, paddingVertical: pv, paddingHorizontal: ph,
       margin: m, marginTop: mt, marginBottom: mb, marginLeft: ml, marginRight: mr, marginVertical: mv, marginHorizontal: mh,
-      height: h, width: w, fontFamily, fontSize, fontWeight: 'bold', color, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
+      height: h, width: w, fontFamily:fontFamilyH, fontSize, fontWeight:'600', color, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
       flexGrow, flex, alignSelf
     }, props.className, props.style]} >{props.children}</Text>)
 })
@@ -313,14 +313,14 @@ export const H5 = React.forwardRef((props, ref) => {
       style={[{
         padding: p, paddingLeft: pl, paddingRight: pr, paddingBottom: pb, paddingTop: pt, paddingVertical: pv, paddingHorizontal: ph,
         margin: m, marginTop: mt, marginBottom: mb, marginLeft: ml, marginRight: mr, marginVertical: mv, marginHorizontal: mh,
-        height: h, width: w, fontFamily, fontSize, fontWeight: 'bold', color, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
+        height: h, width: w, fontFamily:fontFamilyH, fontSize, fontWeight:'600', color, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
         flexGrow, flex, alignSelf
       }, props.className, props.style]} />)
   else return (<Text onPress={props.onClick} ref={ref} {...props}
     style={[{
       padding: p, paddingLeft: pl, paddingRight: pr, paddingBottom: pb, paddingTop: pt, paddingVertical: pv, paddingHorizontal: ph,
       margin: m, marginTop: mt, marginBottom: mb, marginLeft: ml, marginRight: mr, marginVertical: mv, marginHorizontal: mh,
-      height: h, width: w, fontFamily, fontSize, fontWeight: 'bold', color, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
+      height: h, width: w, fontFamily:fontFamilyH, fontSize, fontWeight:'600', color, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
       flexGrow, flex, alignSelf
     }, props.className, props.style]} >{props.children}</Text>)
 })
@@ -332,14 +332,14 @@ export const H6 = React.forwardRef((props, ref) => {
       style={[{
         padding: p, paddingLeft: pl, paddingRight: pr, paddingBottom: pb, paddingTop: pt, paddingVertical: pv, paddingHorizontal: ph,
         margin: m, marginTop: mt, marginBottom: mb, marginLeft: ml, marginRight: mr, marginVertical: mv, marginHorizontal: mh,
-        height: h, width: w, fontFamily, fontSize, fontWeight: 'bold', color, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
+        height: h, width: w, fontFamily:fontFamilyH, fontSize, fontWeight:'600', color, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
         flexGrow, flex, alignSelf
       }, props.className, props.style]} />)
   else return (<Text onPress={props.onClick} ref={ref} {...props}
     style={[{
       padding: p, paddingLeft: pl, paddingRight: pr, paddingBottom: pb, paddingTop: pt, paddingVertical: pv, paddingHorizontal: ph,
       margin: m, marginTop: mt, marginBottom: mb, marginLeft: ml, marginRight: mr, marginVertical: mv, marginHorizontal: mh,
-      height: h, width: w, fontFamily, fontSize, fontWeight: 'bold', color, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
+      height: h, width: w, fontFamily:fontFamilyH, fontSize, fontWeight:'600', color, backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1],
       flexGrow, flex, alignSelf
     }, props.className, props.style]} >{props.children}</Text>)
 })
@@ -385,7 +385,7 @@ export const P = React.forwardRef((props, ref) => {
 })
 
 export const Li = React.forwardRef((props, ref) => {
-  const { alignSelf = 'flex-start', fontSize = 16, p = 7, pt, pb, pl, pr, pv, ph, h, w, m, mt, mb, ml, mr, mv, mh, color = '#444', bgcolor, border = [], flexGrow, flex } = props
+  const { alignSelf, fontSize = 16, p = 7, pt, pb, pl, pr, pv, ph, h, w, m, mt, mb, ml, mr, mv, mh, color = '#444', bgcolor, border = [], flexGrow, flex } = props
   if (props.value) return (<TextInput onPressIn={props.onClick} caretHidden={true} ref={ref} value={props.value} multiline showSoftInputOnFocus={false} {...props}
     style={[{
       flexGrow, flex, alignSelf, padding: p, paddingBottom: pb, paddingTop: pt, paddingRight: pr, paddingLeft: pl, paddingHorizontal: ph, paddingVertical: pv,
@@ -399,7 +399,7 @@ export const Li = React.forwardRef((props, ref) => {
       marginVertical: mv, margin: m, marginTop: mt, marginBottom: mb, marginLeft: ml, marginRight: mr, marginHorizontal: mh,
       backgroundColor: bgcolor, borderWidth: border[0], borderColor: border[1], height: h, width: w, fontFamily, fontSize, color,
       fontWeight: '600'
-    }, props.className, props.style]} >{props.children}</Text>)
+    }, props.className, props.style]} > {props.listStyle !== 'none' && <Text style={[{ position:'absolute',fontSize:20, marginTop:-7},props.left?{marginLeft:-5}:{marginRight:-5}]} >.</Text>} {props.children}</Text>)
 })
 
 export const Small = React.forwardRef((props, ref) => {
